@@ -10,24 +10,24 @@ class Actors {
 
     }
     getActors() {
-        console.log(`---> EX:actor::getActors`); 
+        console.log(`---> actor::getActors`); 
 
         return this.actors;
     }
     getActorsById(id) {
-        console.log(`---> EX:actor::getActorsById = ${id}`);
+        console.log(`---> actor::getActorsById = ${id}`);
 
         return this.actors.find(element => element.id == id);
     }
 
     getActorsBy(elem) {
-        console.log(`---> EX:actor::getActorsBy = ${elem.value}`);
+        console.log(`---> actor::getActorsBy = ${elem.value}`);
 
         return this.actors.filter(element => element[elem.key] == elem.value);
     }
 
     removeActors(id) {
-        console.log(`---> EX:actor::removeActors = ${id}`);
+        console.log(`---> actor::removeActors = ${id}`);
 
         const index = this.actors.findIndex(element => element.id == id);
         if (index != -1) this.actors.splice(index, 1);
@@ -35,14 +35,14 @@ class Actors {
     }
 
     createActors(req) {
-        console.log(`---> EX:actor::createActors = ${req.id}`);
+        console.log(`---> actor::createActors = ${req.id}`);
 
         this.actors.push(req);
         return req;
     }
 
     addActorToMovie(req) {
-        console.log(`---> EX:actor::addActorToMovie = ${req.id}`);
+        console.log(`---> actor::addActorToMovie = ${req.id}`);
 
         const index = this.actors.findIndex(element => element.id == req.id);
         if (index != -1) this.actors[index].actors.push(req.value);
@@ -50,7 +50,7 @@ class Actors {
     }
 
     updateActors(req) {
-        console.log(`---> EX:actor::updateActors = ${req.id}`);
+        console.log(`---> actor::updateActors = ${req.id}`);
 
         const actor = this.getActorsById(req.id);
         if (typeof actor != 'undefined') {
@@ -61,7 +61,7 @@ class Actors {
     }
 
     getIDFromActor(req) {
-        console.log(`---> EX:actor::getIDFromActor = ${req.value}`);
+        console.log(`---> actor::getIDFromActor = ${req.value}`);
 
         return this.actors.filter(element => element.actors.find(e => e == req.value));
     }

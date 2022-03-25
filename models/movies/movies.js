@@ -14,19 +14,19 @@ class Movies {
         return this.movies;
     }
     getMovieById(id) {
-        console.log(`---> EX:movies::getMovieById = ${id}`);
+        console.log(`---> movies::getMovieById = ${id}`);
 
         return this.movies.find(element => element.id == id);
     }
 
     getMovieBy(elem) {
-        console.log(`---> EX:movies::getMovieBy = ${elem.value}`);
+        console.log(`---> movies::getMovieBy = ${elem.value}`);
 
         return this.movies.filter(element => element[elem.key] == elem.value);
     }
 
     removeMovie(id) {
-        console.log(`---> EX:movies::removeMovie = ${id}`);
+        console.log(`---> movies::removeMovie = ${id}`);
 
         const index = this.movies.findIndex(element => element.id == id);
         if (index != -1) this.movies.splice(index, 1);
@@ -34,14 +34,14 @@ class Movies {
     }
 
     createMovie(req) {
-        console.log(`---> EX:movies::removeMovie = ${req.id}`);
+        console.log(`---> movies::removeMovie = ${req.id}`);
 
         this.movies.push(req);
         return req;
     }
 
     updateMovie(req) {
-        console.log(`---> EX:movies::updateMovie`);
+        console.log(`---> movies::updateMovie`);
 
         const movie = this.getMovieById(req.id);
         if (typeof movie != 'undefined') {

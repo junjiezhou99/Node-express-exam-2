@@ -5,7 +5,7 @@ import moviesController from '../controllers/moviesController.js';
 const router = Router();
 
 router.use((req, res, next) => {
-    console.log('---> EX:moviesRouter.js');
+    console.log('---> moviesRouter.js');
     next();
 })
 
