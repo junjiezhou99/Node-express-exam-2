@@ -13,6 +13,9 @@ const validateUserEmail = (req, res, next) => {
         }
 
     }
+    else{
+        next();
+    }
 }
 
 export default {
