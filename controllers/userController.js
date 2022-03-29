@@ -78,10 +78,14 @@ const login = (req, res, next) => {
 const getUser = (req, res, next) => {
     console.log(`---> userController::Get User`);
 
-    const result = userModel.getUser(req.params.username);
+    let result = userModel.getUser(req.params.username);
     
     if (result != undefined){
-        res.status(200).json(result.username);
+        const result2 = JSON.parse(JSON.stringify(result));
+        delete result2["password"];
+        delete result2["active"];
+        res.status(200).json(result2);
+        console.log("SE ha hecho si");
     }
     else{
         next(HttpError(400, {  message: messageapp.user_error_username }))

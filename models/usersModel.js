@@ -18,9 +18,7 @@ class User {
     }
 
     getUser(user) {
-        const userGrant = users.find(element => (element.username == user));
-
-        return userGrant;
+        return users.find(element => (element.username == user));
     }
 
     addGrants(user){
